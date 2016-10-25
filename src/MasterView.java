@@ -53,7 +53,7 @@ public class MasterView extends JFrame{
 	private PropertyChangeListener listener;
 	
 	//title to be changed
-	private String TITLE = "Reaction Rates 2.0";
+	private String TITLE = "Reaction Rates 2.1";
 	
 	//array of data structures
 	private Types[] types = Types.typeSet();
