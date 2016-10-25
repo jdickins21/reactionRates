@@ -26,9 +26,9 @@ public class Types {
 		Types[] types = new Types[4];
 		
 		types[0] = new Types(.335, 3.7); //wild type
-		types[1] = new Types(.335, 2.59); //mutant 45% of the time
-		types[2] = new Types(.66, 3.7); //mutant 45% of the time
-		types[2] = new Types(.66, 2.59); //mutant 30% of the time
+		types[1] = new Types(.335, 2.59); //mutant 33% of the time
+		types[2] = new Types(.66, 3.7); //mutant 33% of the time
+		types[3] = new Types(.66, 2.59); //mutant 33% of the time
 		
 		return types;
 	}

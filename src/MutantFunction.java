@@ -28,7 +28,7 @@ public class MutantFunction {
 			strtIn.setText("0");
 			velocity.setText("0");
 			graph.getSeries().clear();
-			int mute = ( (rand.nextInt(16)) / 7) + 1;
+			int mute = rand.nextInt(3));
 			currType = types[mute];
         	//System.out.println("ON\n" + mute + " " + currType.getXmax() + " " + currType.getKm());
 		}
