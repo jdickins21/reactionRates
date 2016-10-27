@@ -97,7 +97,7 @@ public class MasterView extends JFrame{
 		
 		//label "Enzyme" in the top field of enzyme JPanel
 		//Spaces after the label to align with next input box
-		JLabel enzLab = new JLabel("    [Enzyme] μM ");
+		JLabel enzLab = new JLabel("    [Enzyme] µM ");
 		
 		//text box to be added to left in enzyme JPanel
 		final JTextField enzIn = new JTextField(".056");
