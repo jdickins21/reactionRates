@@ -53,7 +53,7 @@ public class MasterView extends JFrame{
 	private PropertyChangeListener listener;
 	
 	//title to be changed
-	private String TITLE = "Reaction Rates 2.1";
+	private String TITLE = "Reaction Rates 2.2";
 	
 	//array of data structures
 	private Types[] types = Types.typeSet();
@@ -161,18 +161,56 @@ public class MasterView extends JFrame{
 	//mutant check box
 		JPanel checkPan = new JPanel();
 		checkPan.setBackground(Color.WHITE);
+		
+		JLabel mutantLebel = new JLabel("Mutants:");
+		
 		//checkPan.setBorder(BorderFactory.createLineBorder(Color.black));
-		JCheckBox mutant = new JCheckBox("mutant", false);
-		//checkbox states action
-		mutant.addActionListener(new ActionListener() {
+		
+		final JCheckBox mutant1 = new JCheckBox("1", false);
+		final JCheckBox mutant2 = new JCheckBox("2", false);
+		final JCheckBox mutant3 = new JCheckBox("3", false);
+		
+		
+		//checkbox states action mutant1
+		mutant1.addActionListener(new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
+		    	//uncheck 2 amd 3
+		    	mutant2.setSelected(false);
+		    	mutant3.setSelected(false);
 		    	//found in MutantFuction.java
-		    	currType = MutantFunction.mutate(event, enzIn, strtIn, velocity, graph, currType, types);
+		    	currType = MutantFunction.mutate1(event, enzIn, strtIn, velocity, graph, currType, types);
 		    }
 		});
 		
-		checkPan.add(mutant);
+		//checkbox states action mutant2
+		mutant2.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+		    	//uncheck 1 amd 3
+		    	mutant1.setSelected(false);
+		    	mutant3.setSelected(false);
+		    	//found in MutantFuction.java
+		    	currType = MutantFunction.mutate2(event, enzIn, strtIn, velocity, graph, currType, types);
+		    }
+		});
+		
+		//checkbox states action mutant3
+		mutant3.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+		    	//uncheck 1 amd 2
+		    	mutant1.setSelected(false);
+		    	mutant2.setSelected(false);
+		    	//found in MutantFuction.java
+		    	currType = MutantFunction.mutate3(event, enzIn, strtIn, velocity, graph, currType, types);
+		    }
+		});
+		
+		checkPan.add(mutantLebel);
+		checkPan.add(mutant1);
+		checkPan.add(mutant2);
+		checkPan.add(mutant3);
 		checkPan.setMaximumSize(new Dimension(Integer.MAX_VALUE, checkPan.getMinimumSize().height));
 		
 		//add everything to input panel
